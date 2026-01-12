@@ -10,8 +10,28 @@ import Testing
 
 struct pia14iosjan12Tests {
 
+    
+    
+    
     @Test func example() async throws {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     }
 
+    @Test func letstest() {
+        //#expect(1 + 1 == 9)
+        
+        let mathcode = MathCode()
+        
+        #expect(mathcode.doadd(number1text: "1", number2text: "1") == "2")
+        #expect(mathcode.doadd(number1text: "1", number2text: "0") == "1")
+        
+        #expect(mathcode.doadd(number1text: "", number2text: "") == "")
+        #expect(mathcode.doadd(number1text: "x", number2text: "1") == "")
+        #expect(mathcode.doadd(number1text: "1", number2text: "x") == "")
+
+        #expect(mathcode.doadd(number1text: "99", number2text: "2") == "100")
+        #expect(mathcode.doadd(number1text: "2", number2text: "99") == "100")
+
+    }
+    
 }
