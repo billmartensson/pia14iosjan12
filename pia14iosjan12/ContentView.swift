@@ -11,8 +11,13 @@ import MapKit
 
 struct ContentView: View {
     
+    /// First textfield number
     @State var number1text = ""
+    
+    /// Second textfield number
     @State var number2text = ""
+    
+    /// The result text
     @State var resulttext = ""
 
     
