@@ -28,6 +28,28 @@ final class pia14iosjan12UITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        app.activate()
+        let txt1 = app.textFields["Number 1"].firstMatch
+        let txt2 = app.textFields["Number 2"].firstMatch
+
+        txt1.tap()
+        txt1.typeText("1")
+        
+        txt2.tap()
+        txt2.typeText("banan")
+        
+        app.buttons["Add"].firstMatch.tap()
+                
+        let errortext = app.staticTexts["ERROR"].firstMatch
+        
+        XCTAssert(errortext.exists)
+        
+        let mainScreenScreenshot = XCUIScreen.main.screenshot()
+        let fullScreenshotAttachment = XCTAttachment(screenshot: mainScreenScreenshot)
+        fullScreenshotAttachment.lifetime = .keepAlways
+
+        add(fullScreenshotAttachment)
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 

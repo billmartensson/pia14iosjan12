@@ -20,14 +20,14 @@ struct ContentView: View {
     /// The result text
     @State var resulttext = ""
 
-    
+    @State var showerror = false
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            if showerror {
+                Text("ERROR")
+            }
             
             TextField("Number 1", text: $number1text)
 
@@ -35,6 +35,12 @@ struct ContentView: View {
 
             Button("Add") {
                 resulttext = MathCode().doadd(number1text: number1text, number2text: number2text)
+                
+                if resulttext == "" {
+                    showerror = true
+                } else {
+                    showerror = false
+                }
             }
             
             Text(resulttext)

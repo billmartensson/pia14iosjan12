@@ -33,5 +33,21 @@ struct pia14iosjan12Tests {
         #expect(mathcode.doadd(number1text: "2", number2text: "99") == "100")
 
     }
+ 
+    @Test func letstestminus() {
+        let mathcode = MathCode()
+        
+        #expect(mathcode.dominus(number1text: "5", number2text: "1") == "4")
+        #expect(mathcode.dominus(number1text: "x", number2text: "1") == "")
+        #expect(mathcode.dominus(number1text: "1", number2text: "x") == "")
+        #expect(mathcode.dominus(number1text: "1", number2text: "5") == "0")
+
+        
+    }
     
+    @Test func letstestmulti() {
+        let mathcode = MathCode()
+        
+        #expect(mathcode.domulti(number1text: "2", number2text: "2") == "4")
+    }
 }
